@@ -1,7 +1,7 @@
 cache-web
 .DS_store
 original_code_modules
-
+code_modules/*/node_modules
 # Logs
 logs
 *.log
