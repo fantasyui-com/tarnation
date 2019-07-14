@@ -1,23 +1,35 @@
 import util from 'util';
 import sleep from './util/sleep.mjs';
 
+import acorn from 'acorn';
+import walk from 'acorn-walk';
+import astring from 'astring';
+const generate = astring.generate;
+
 export default async function main({context, setup, input}) {
 
-  console.log(util.inspect(input,false,2,true))
-
   const output = {
-    someList:[],
-    // url: 'example.com',
-    // meta: {},
-    // data: {},
+    objectList:[],
   };
 
   return new Promise( async (resolve, reject) => {
 
-    setup.sleepList = [1,2,3]; // Faux
-    for (const duration of setup.sleepList) {
-      output.someList.push( await sleep(duration) );
-    }
+
+    // console.log('astring');
+    // console.log(Object.keys(astring));
+
+
+    input.codeList.forEach(script => {
+      walk.simple(acorn.parse(script), {
+        ObjectExpression(node) {
+          let generated = generate(node).trim();
+          if(generated.length > 2){ // meaning more than just '{}'
+            output.objectList.push( generated );
+          }
+        }
+      })
+    });
+
     resolve(output);
 
   });

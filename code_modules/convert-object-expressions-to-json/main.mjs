@@ -1,23 +1,23 @@
+import acorn from 'acorn';
 import util from 'util';
-import sleep from './util/sleep.mjs';
+import recurse from './util/recurse.mjs';
 
 export default async function main({context, setup, input}) {
 
-  console.log(util.inspect(input,false,2,true))
-
   const output = {
-    someList:[],
-    // url: 'example.com',
-    // meta: {},
-    // data: {},
+    jsonList:[],
   };
 
   return new Promise( async (resolve, reject) => {
 
-    setup.sleepList = [1,2,3]; // Faux
-    for (const duration of setup.sleepList) {
-      output.someList.push( await sleep(duration) );
-    }
+    input.objectList.forEach((script,index) => {
+      let parsed = acorn.parse('let x = '+ script, {});
+      let jsonString = recurse({node: parsed.body[0].declarations[0].init})
+      if((jsonString) && (jsonString.length > 2)){
+         output.jsonList.push(jsonString)
+      }
+    });
+
     resolve(output);
 
   });

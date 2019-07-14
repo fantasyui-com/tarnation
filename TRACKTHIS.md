@@ -348,7 +348,7 @@ Awesome list of sites that track you.
 - [Travelzoo: Deals on Hotels, Flights, Vacations, Cruises & More - Travel deals on hotels, flights, vacation packages, cruises and local & entertainment deals too. Join millions of travelers who already use Travelzoo! (www.travelzoo.com)](https://www.travelzoo.com/)
 - [Plan Your Trip to Jamaica | View Itineraries & Travel Information - Let us help you plan your adventure in Jamaica by viewing our unique itineraries, helpful travel information or sign up for our informative free e-newsletter. (www.visitjamaica.com)](https://www.visitjamaica.com/plan-your-trip/)
 - [Getaways Deals | Groupon - Groupon Getaways: Discover 1,000s of Top-Rated Getaways (www.groupon.com)](https://www.groupon.com/getaways)
-- [The Official Tourism Website of the Caribbean | - You've always known the islands of the Caribbean for their beauty. Now know them by name. Visit each and every island of the Caribbean, all in one place. (www.caribbeantravel.com)](https://www.caribbeantravel.com/)
+- [www.caribbeantravel.com (www.caribbeantravel.com)](https://www.caribbeantravel.com/)
 - [Bot or Not? (www.expedia.com)](https://www.expedia.com/Flights)
 - [Giving Back | Beautiful Yoga Clothes | KiraGrace - We consider it part of our duty to give back to those in need in the hope of building a more caring world. Find out about how to get involved. (www.kiragrace.com)](https://www.kiragrace.com/giving-back/)
 - [Yoga, Travel, & Adventure Clothes With A Conscience | prAna (www.prana.com)](https://www.prana.com/)

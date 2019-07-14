@@ -1,23 +1,18 @@
 import util from 'util';
-import sleep from './util/sleep.mjs';
+import fs from 'fs';
+import path from 'path';
 
 export default async function main({context, setup, input}) {
 
   console.log(util.inspect(input,false,2,true))
 
   const output = {
-    someList:[],
-    // url: 'example.com',
-    // meta: {},
-    // data: {},
+    result:input.markdownText,
+    location:path.resolve(setup.fileName),
   };
 
   return new Promise( async (resolve, reject) => {
-
-    setup.sleepList = [1,2,3]; // Faux
-    for (const duration of setup.sleepList) {
-      output.someList.push( await sleep(duration) );
-    }
+    fs.writeFileSync(output.location, output.result);
     resolve(output);
 
   });

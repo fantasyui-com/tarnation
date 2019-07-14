@@ -1,23 +1,31 @@
-import util from 'util';
-import sleep from './util/sleep.mjs';
-
+import shasum from 'shasum';
 export default async function main({context, setup, input}) {
 
-  console.log(util.inspect(input,false,2,true))
-
   const output = {
-    someList:[],
-    // url: 'example.com',
-    // meta: {},
-    // data: {},
+    profileList:[],
   };
 
   return new Promise( async (resolve, reject) => {
 
-    setup.sleepList = [1,2,3]; // Faux
-    for (const duration of setup.sleepList) {
-      output.someList.push( await sleep(duration) );
-    }
+    let data = JSON.parse(input.jsonString);
+    Object.keys(data.state.profiles).forEach(profileName=>{
+      let profile = data.state.profiles[profileName];
+      let cleanProfile = {
+        title:profile.name_long,
+        urls:[]
+      };
+      output.profileList.push(cleanProfile);
+      profile.links.forEach(link=>{
+        const url = new URL(link);
+        cleanProfile.urls.push({
+          cas: shasum(url.toString()),
+          url:url.toString(),
+          hostname: url.hostname,
+          title: url.hostname // TODO REAL TITLES!
+        })
+      })
+    });
+
     resolve(output);
 
   });
