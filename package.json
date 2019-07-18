@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/fantasyui-com/tarnation#readme",
   "dependencies": {
-    "dreamtime": "^1.23.0",
+    "dreamtime": "^1.26.0",
     "os-paths": "^3.0.2"
   }
 }
