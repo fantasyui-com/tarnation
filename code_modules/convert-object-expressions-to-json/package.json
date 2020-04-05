@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "acorn": "^6.2.0"
+    "acorn": "^6.4.1"
   }
 }
