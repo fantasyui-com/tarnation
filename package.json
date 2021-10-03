@@ -1,6 +1,6 @@
 {
   "name": "tarnation",
-  "version": "1.32.0",
+  "version": "1.33.0",
   "description": "Extract and analyze embedded state objects in complex compiled applications.",
   "main": "index.mjs",
   "scripts": {
