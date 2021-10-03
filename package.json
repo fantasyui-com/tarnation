@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node build.js",
     "start": "node --experimental-modules index.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "save": "git add .; git commit -m 'New Release'; git push; npm version patch; npm publish; git push;"
   },
   "repository": {
     "type": "git",
@@ -17,14 +18,14 @@
     "analysis",
     "trackthis.link"
   ],
-  "author": "https://github.com/fantasyui-com",
+  "author": "fantasyui.com <fantasyui.com@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fantasyui-com/tarnation/issues"
   },
   "homepage": "https://github.com/fantasyui-com/tarnation#readme",
   "dependencies": {
-    "dreamtime": "^1.26.0",
+    "dreamtime": "^1.24.0",
     "os-paths": "^3.0.2"
   }
 }
